@@ -2,18 +2,38 @@
 
 int main(void)
 {
-    int n, i;
-    int sum = 0;
+    int a, b;
+    char op;
 
-    printf("Enter a number: ");
-    scanf("%d",&n);
+    printf("enter the calculation : ");
+    scanf("%d %c %d", &a, &op, &b);   /* read 3 values with one scanf */
 
-    for (i = 1; i <= n; ++i) {
-        sum += i;
+    switch (op) {
+    case '+':
+        printf("%d%c%d=%d\n", a, op, b, a + b);
+        break;
+    case '-':
+        printf("%d%c%d=%d\n", a, op, b, a - b);
+        break;
+    case '*':
+        printf("%d%c%d=%d\n", a, op, b, a * b);
+        break;
+    case '/':
+        if (b == 0)
+            printf("Cannot divide by zero.\n");
+        else
+            printf("%d%c%d=%d\n", a, op, b, a / b);
+        break;
+    case '%':
+        if (b == 0)
+            printf("Cannot divide by zero.\n");
+        else
+            printf("%d%c%d=%d\n", a, op, b, a % b);
+        break;
+    default:
+        printf("Unsupported operator.\n");
+        break;
     }
 
-    printf("Sum = %d\n", sum);
-    
     return 0;
-
 }
