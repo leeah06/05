@@ -8,7 +8,7 @@ int main(void)
     printf("input a string :");
 
     while ((x = getchar()) != '\n') {
-        if (x >= '0' && x <= '9')   /* is it between '0' and '9'? */
+        if (x >= '0' && x <= '9')   
             num++;
     }
 
