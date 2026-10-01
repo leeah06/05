@@ -3,14 +3,16 @@
 int main(void)
 {
     int x;
-    printf("Enter an integer :");
-    scanf("%d", &x);
+    int num=0;
 
+    printf("input a string :");
 
-    if (x<0)
-        x= -x;
-    
+    while ((x = getchar()) != '\n') {
+        if (x >= '0' && x <= '9')   /* is it between '0' and '9'? */
+            num++;
+    }
 
-    printf("absolute value: %d\n", x);
+    printf("the number of digits is %d\n", num);
+
     return 0;
 }
