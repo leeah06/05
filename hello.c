@@ -2,38 +2,22 @@
 
 int main(void)
 {
-    int a, b;
-    char op;
+    int answer = 59;   /* answer */
+    int guess;
+    int trials = 0;    /* number of trials */
 
-    printf("enter the calculation : ");
-    scanf("%d %c %d", &a, &op, &b);   /* read 3 values with one scanf */
+    do {
+        printf("Guess a number :");
+        scanf("%d", &guess);
+        trials++;
 
-    switch (op) {
-    case '+':
-        printf("%d%c%d=%d\n", a, op, b, a + b);
-        break;
-    case '-':
-        printf("%d%c%d=%d\n", a, op, b, a - b);
-        break;
-    case '*':
-        printf("%d%c%d=%d\n", a, op, b, a * b);
-        break;
-    case '/':
-        if (b == 0)
-            printf("Cannot divide by zero.\n");
-        else
-            printf("%d%c%d=%d\n", a, op, b, a / b);
-        break;
-    case '%':
-        if (b == 0)
-            printf("Cannot divide by zero.\n");
-        else
-            printf("%d%c%d=%d\n", a, op, b, a % b);
-        break;
-    default:
-        printf("Unsupported operator.\n");
-        break;
-    }
+        if (guess < answer)
+            printf("low!\n");
+        else if (guess > answer)
+            printf("high!\n");
+    } while (guess != answer);
+
+    printf("Congratulation! trials:%d\n", trials);
 
     return 0;
 }
